@@ -57,7 +57,7 @@ body, html {
 .owl-carousel .owl-dots .owl-dot {
   flex-grow: 1;
   height: 4px;
-  margin: 0 5px;
+  margin: 0 2px;
   overflow: hidden;
   position: relative;
   border-radius: 20px;
