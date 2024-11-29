@@ -1,0 +1,108 @@
+/* styles.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.owl-carousel {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.owl-stage-outer {
+  position: relative;
+  z-index: 0;
+}
+
+.owl-dots {
+  position: absolute;
+  z-index: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.item img {
+  max-width: auto;
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+.owl-carousel .owl-dots {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 100;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+  flex-grow: 1;
+  height: 4px;
+  margin: 0 5px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+  height: 100%;
+  width: 100%;
+  background: #ff914d;
+}
+
+.owl-carousel .owl-dots .owl-dot.active span {
+  height: 100%;
+  width: 100%;
+  background: #ff914d !important;
+  /* transition: width linear; */
+}
+
+.owl-carousel .owl-dots .owl-dot.active ~ .owl-dot span {
+  height: 100%;
+  width: 100%;
+  background: rgba(180, 180, 180, 0.6) !important;
+  /* transition: width linear; */
+}
+
+.owl-nav {
+  position: absolute;
+  top: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+}
+
+.owl-prev,
+.owl-next {
+  height: 100vh;
+  width: 50vw;
+}
+
+.owl-prev span,
+.owl-next span {
+  opacity: 0;
+}
+
+.owl-carousel.owl-drag .owl-item  {
+  -webkit-animation-duration: 0ms !important;
+  animation-duration: 0ms !important;
+}
