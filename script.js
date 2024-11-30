@@ -35,13 +35,15 @@ $(document).ready(function(){
     }
   }
 
-  rastrearVisitante();
+  // rastrearVisitante();
 
   $('.owl-carousel').owlCarousel({
     loop:false,
     margin:0,
     nav:true,
     autoWidth:true,
+    touchDrag: true,
+    mouseDrag: true,
     animateOut: 'fadeOut',
     responsive:{
       0:{
@@ -49,16 +51,4 @@ $(document).ready(function(){
       },
     }
   })
-
-  const progressBars = document.querySelectorAll(".owl-dot span");
-  const slideDuration = 60000; // 60 segundos para cada slide (60000ms)
-  let isPaused = false;
-  
-  function animateProgressBar(index) {
-    if (!isPaused) {
-      const progressBar = progressBars[index];
-      progressBar.style.transition = `width ${slideDuration}ms linear`;
-      progressBar.style.width = '100%';
-    }
-  }
 });
