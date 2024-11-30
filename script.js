@@ -4,7 +4,7 @@ $(document).ready(function(){
   function gerarVisitanteId() {
     let visitanteId = localStorage.getItem('visitanteId');
     if (!visitanteId) {
-      visitanteId = 'v_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      visitanteId = 'v_' + Date.now() + '_' + Math.random().toString(36).substring(2, 11);
       localStorage.setItem('visitanteId', visitanteId);
     }
     return visitanteId;
@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
   }
 
-  // rastrearVisitante();
+  rastrearVisitante();
 
   $('.owl-carousel').owlCarousel({
     loop:false,
@@ -51,4 +51,20 @@ $(document).ready(function(){
       },
     }
   })
+
+  // Adicione este código para implementar a navegação por clique
+  const owl = $('.owl-carousel');
+  $(document).on('click', function (e) {
+    const windowWidth = $(window).width();
+    const clickX = e.pageX;
+
+    // Se o clique for na metade esquerda da tela
+    if (clickX < windowWidth / 2) {
+      owl.trigger('prev.owl.carousel', [300]);
+    }
+    // Se o clique for na metade direita da tela
+    else {
+      owl.trigger('next.owl.carousel', [300]);
+    }
+  });
 });
